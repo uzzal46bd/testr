@@ -74,7 +74,7 @@
     "scripts": {
         "clean": "rimraf dist",
         "build": "node -e \"process.exit(require('os').platform() === 'win32' ? 0 : 1)\" && qwc2\\scripts\\package-commands.bat build || ./qwc2/scripts/package-commands.sh build",
-        "start": "npm run tsupdate && npm run themesconfig && node server.js",
+        "start": "npm run tsupdate && npm run themesconfig && webpack-dev-server --progress --colors --host 192.168.1.88 --port 8082",
         "test": "karma start ./karma.conf.single-run.js",
         "continuoustest": "karma start ./karma.conf.continuous-test.js",
         "mvntest": "karma start ./karma.conf.single-run.js --reporters junit,dots,coverage",
@@ -84,7 +84,8 @@
         "prod": "node -e \"process.exit(require('os').platform() === 'win32' ? 0 : 1)\" && qwc2\\scripts\\package-commands.bat prod || ./qwc2/scripts/package-commands.sh prod",
         "tsupdate": "node qwc2/scripts/updateTranslations.js",
         "analyze": "node -e \"process.exit(require('os').platform() === 'win32' ? 0 : 1)\" && qwc2\\scripts\\package-commands.bat analyze || ./qwc2/scripts/package-commands.sh analyze",
-        "release": "node -e \"process.exit(require('os').platform() === 'win32' ? 0 : 1)\" && qwc2\\scripts\\package-commands.bat release || ./qwc2/scripts/package-commands.sh release"
+        "release": "node -e \"process.exit(require('os').platform() === 'win32' ? 0 : 1)\" && qwc2\\scripts\\package-commands.bat release || ./qwc2/scripts/package-commands.sh release",
+        "heroku-postbuild": "npm run build"
     },
     "author": "Sourcepole",
     "license": "BSD-2-Clause"
