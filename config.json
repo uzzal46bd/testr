@@ -1,8 +1,8 @@
 {
-  "proxyUrl": "http://qwc2.sourcepole.ch/api/proxy?url=",
-  "qwc2serverUrl": "http://qwc2.sourcepole.ch/api/",
-  "translationsPath": "/translations",
-  "assetsPath": "/assets",
+  "proxyUrl": "",
+  "qwc2serverUrl": "",
+  "translationsPath": "./translations",
+  "assetsPath": "./assets",
   "urlPositionFormat": "extent",
   "urlPositionCrs": "",
   "preserveExtentOnThemeSwitch": true,
@@ -10,7 +10,15 @@
   "plugins": {
       "mobile": [
         {
-          "name": "Map"
+          "name": "Map",
+                          "cfg": {
+            "projection": "EPSG:3008",
+            "maxExtent": [
+             80000,6130000,300000,6280000
+            ],
+            "zoomControl": false,
+            "mapType": "openlayers"
+          }
         },
         {
           "name": "LocateButton",
@@ -101,7 +109,15 @@
       ],
       "desktop": [
         {
-          "name": "Map"
+          "name": "Map",
+                          "cfg": {
+            "projection": "EPSG:3008",
+            "maxExtent": [
+             80000,6130000,300000,6280000
+            ],
+            "zoomControl": false,
+            "mapType": "openlayers"
+          }
         },
         {
           "name": "LocateButton"
